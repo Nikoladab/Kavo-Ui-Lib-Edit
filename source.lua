@@ -1,4 +1,4 @@
-if _G.UiLoad2y3d == true return end
+if _G.UiLoad2y3d == "a" return end
 _G.UiLoad2y3d = true
 
 local Kavo = {}
