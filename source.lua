@@ -272,7 +272,7 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
-    close = _G.SaleJePicka
+    _G.SaleJePicka = close
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
