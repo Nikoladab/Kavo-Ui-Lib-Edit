@@ -1,4 +1,8 @@
+if _G.UiLoad2y3d == true then return end
+_G.UiLoad2y3d = true
+
 local Kavo = {}
+
 
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
@@ -8,9 +12,9 @@ local run = game:GetService("RunService")
 local Utility = {}
 local Objects = {}
 function Kavo:DraggingEnabled(frame, parent)
-        
+
     parent = parent or frame
-    
+
     -- stolen from wally or kiriot, kek
     local dragging = false
     local dragInput, mousePos, framePos
@@ -20,7 +24,7 @@ function Kavo:DraggingEnabled(frame, parent)
             dragging = true
             mousePos = input.Position
             framePos = parent.Position
-            
+
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
                     dragging = false
@@ -268,6 +272,7 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
+    close = _G.SaleJePicka
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
@@ -278,6 +283,7 @@ function Kavo.CreateLib(kavName, themeList)
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
     close.MouseButton1Click:Connect(function()
+        _G.UiLoad2y3d = false
         ScreenGui:Destroy()
     end)
 
@@ -331,7 +337,7 @@ function Kavo.CreateLib(kavName, themeList)
     infoContainer.Position = UDim2.new(0.299047619, 0, 0.874213815, 0)
     infoContainer.Size = UDim2.new(0, 368, 0, 33)
 
-    
+
     coroutine.wrap(function()
         while wait() do
             Main.BackgroundColor3 = themeList.Background
@@ -458,7 +464,7 @@ function Kavo.CreateLib(kavName, themeList)
                 tabButton.BackgroundColor3 = themeList.SchemeColor
             end
         end)()
-    
+
         function Sections:NewSection(secName)
             secName = secName or "Section"
             local modules = {}
@@ -476,7 +482,7 @@ function Kavo.CreateLib(kavName, themeList)
             sectionFrame.BackgroundColor3 = themeList.Background--36, 37, 43
             Objects[sectionFrame] = "BackgroundColor3"
             sectionFrame.BorderSizePixel = 0
-            
+
             sectionlistoknvm.Name = "sectionlistoknvm"
             sectionlistoknvm.Parent = sectionFrame
             sectionlistoknvm.SortOrder = Enum.SortOrder.LayoutOrder
@@ -537,7 +543,7 @@ function Kavo.CreateLib(kavName, themeList)
             sectionElListing.SortOrder = Enum.SortOrder.LayoutOrder
             sectionElListing.Padding = UDim.new(0, 3)
 
-            
+
         coroutine.wrap(function()
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
@@ -749,7 +755,7 @@ function Kavo.CreateLib(kavName, themeList)
                         btnInfo.TextColor3 = themeList.TextColor
                     end
                 end)()
-                
+
                 function ButtonFunction:UpdateButton(newTitle)
                     btnInfo.Text = newTitle
                 end
@@ -863,7 +869,7 @@ function Kavo.CreateLib(kavName, themeList)
 
 
                 updateSectionFrame()
-            
+
                 local btn = textboxElement
                 local infBtn = viewInfo
 
@@ -1036,7 +1042,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                     local moreInfo = Instance.new("TextLabel")
                     local UICorner = Instance.new("UICorner")
-    
+
                     moreInfo.Name = "TipMore"
                     moreInfo.Parent = infoContainer
                     moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
@@ -1048,7 +1054,7 @@ function Kavo.CreateLib(kavName, themeList)
                     moreInfo.TextColor3 = themeList.TextColor
                     moreInfo.TextSize = 14.000
                     moreInfo.TextXAlignment = Enum.TextXAlignment.Left
-    
+
                     UICorner.CornerRadius = UDim.new(0, 4)
                     UICorner.Parent = moreInfo
 
@@ -1465,7 +1471,7 @@ function Kavo.CreateLib(kavName, themeList)
                 Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
                 Sample.ImageColor3 = themeList.SchemeColor
                 Sample.ImageTransparency = 0.600
-                
+
                 dropFrame.Name = "dropFrame"
                 dropFrame.Parent = sectionInners
                 dropFrame.BackgroundColor3 = themeList.Background
@@ -1739,7 +1745,7 @@ function Kavo.CreateLib(kavName, themeList)
                             Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
                         end
                     end)
-    
+
                     UICorner_2.CornerRadius = UDim.new(0, 4)
                     UICorner_2.Parent = optionSelect
 
@@ -1790,7 +1796,7 @@ function Kavo.CreateLib(kavName, themeList)
                         Sample11.Image = "http://www.roblox.com/asset/?id=4560909609"
                         Sample11.ImageColor3 = themeList.SchemeColor
                         Sample11.ImageTransparency = 0.600
-    
+
                         local sample11 = Sample11
                         DropYSize = DropYSize + 33
                         optionSelect.Name = "optionSelect"
@@ -1946,7 +1952,7 @@ function Kavo.CreateLib(kavName, themeList)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
                     end
                 end)
-        
+
                 game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
                     if not ok then 
                         if current.KeyCode.Name == oldKey then 
@@ -1975,7 +1981,7 @@ function Kavo.CreateLib(kavName, themeList)
                 Sample.ImageColor3 = themeList.SchemeColor
                 Sample.ImageTransparency = 0.600
 
-                
+
                 togName.Name = "togName"
                 togName.Parent = keybindElement
                 togName.BackgroundColor3 = themeList.TextColor
@@ -2215,7 +2221,7 @@ function Kavo.CreateLib(kavName, themeList)
 
                 UICorner_2.CornerRadius = UDim.new(0, 4)
                 UICorner_2.Parent = colorHeader
-                
+
                 touch.Name = "touch"
                 touch.Parent = colorHeader
                 touch.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
