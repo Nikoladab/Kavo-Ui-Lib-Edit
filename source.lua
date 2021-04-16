@@ -1,6 +1,4 @@
-
 local Kavo = {}
-
 
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
@@ -270,7 +268,6 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
-    close = _G.SaleJePicka
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
@@ -281,7 +278,6 @@ function Kavo.CreateLib(kavName, themeList)
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
     close.MouseButton1Click:Connect(function()
-        _G.UiLoad2y3d = false
         ScreenGui:Destroy()
     end)
 
