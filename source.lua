@@ -1,5 +1,3 @@
-if _G.UiLoad2y3d == true then return end
-_G.UiLoad2y3d = true
 
 local Kavo = {}
 
@@ -272,7 +270,6 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
-    _G.SaleJePicka = close
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
@@ -283,7 +280,6 @@ function Kavo.CreateLib(kavName, themeList)
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
     close.MouseButton1Click:Connect(function()
-        _G.UiLoad2y3d = false
         ScreenGui:Destroy()
     end)
 
