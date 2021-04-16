@@ -280,6 +280,7 @@ function Kavo.CreateLib(kavName, themeList)
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
     close.MouseButton1Click:Connect(function()
+        _G.BarrenLoaded = false
         ScreenGui:Destroy()
     end)
 
